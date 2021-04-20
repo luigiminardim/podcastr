@@ -1,10 +1,18 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
+import Header from "../components/shared/Header";
+import Player from "../components/shared/Player";
 import theme from "../theme";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Flex w="100vw" h="100vh" bg="gray.50" flexDir="row">
+        <Flex as="main" flexDir="column" grow={1}>
+          <Header />
+          <Component {...pageProps} />
+        </Flex>
+        <Player />
+      </Flex>
     </ChakraProvider>
   );
 }
