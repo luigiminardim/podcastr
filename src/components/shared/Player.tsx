@@ -1,3 +1,4 @@
+import NextLink from "next/link";
 import { IconButton } from "@chakra-ui/button";
 import { Box, Center, Flex, HStack, Stack, Text } from "@chakra-ui/layout";
 import { Progress } from "@chakra-ui/progress";
@@ -13,13 +14,14 @@ export default function Player() {
       color="white"
       flexDir="column"
       justify="space-between"
+      align="center"
     >
-      <Stack spacing="4" as="header" align="center">
-        <img src="playing.svg" alt="Tocando agora." />
+      <HStack spacing="4" as="header" align="center">
+        <img src="/playing.svg" alt="Tocando agora." />
         <Text as="strong" fontFamily="heading" fontWeight="semibold">
           Tocando agora
         </Text>
-      </Stack>
+      </HStack>
       <Center
         w="full"
         h="xs"
@@ -41,13 +43,15 @@ export default function Player() {
           <Text as="span">00:00</Text>
         </HStack>
         <HStack mt="10" spacing="6" justify="center">
-          <IconButton
-            aria-label="shuffle"
-            variant="ghost"
-            colorScheme="purple"
-            color="red"
-            icon={<img src="/shuffle.svg" alt="Embaralhar." />}
-          />
+          <NextLink href={{ pathname: "/" }}>
+            <IconButton
+              aria-label="shuffle"
+              variant="ghost"
+              colorScheme="purple"
+              color="red"
+              icon={<img src="/shuffle.svg" alt="Embaralhar." />}
+            />
+          </NextLink>
           <IconButton
             aria-label="play-previous"
             variant="ghost"

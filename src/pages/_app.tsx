@@ -6,7 +6,7 @@ import theme from "../theme";
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <Flex w="100vw" h="100vh" bg="gray.50" flexDir="row">
+      <Flex w="100vw" h="100vh" bg="gray.50" flexDir="row" overflow="hidden">
         <Flex as="main" flexDir="column" grow={1}>
           <Header />
           <Component {...pageProps} />
